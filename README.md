@@ -1,14 +1,14 @@
 # Carret de la compra
 - creareu un nou readme amb els vostres comentaris
 
-## SOBRE LA REFACTORITZACIÓ
+## Sobre la refactorització
 
 - haureu de deixar clar en quina classe i/o mètode apliqueu refactorització, per tant per a tota la refactoritzacio cal posar un comentari com ara aquest:
 
 _REFACT: quin mètode s'ha fet servir? sobre quina part del codi?_
 
 
-## SOBRE LA DOCUMENTACIÓ AMB JAVADOC
+## Sobre la documentació amb JavaDoc
 
 a la capçalera de totes les classes cal posar almenys aquests valors:
 - Nom de l'autor
@@ -16,7 +16,7 @@ a la capçalera de totes les classes cal posar almenys aquests valors:
 - Versió 
 Els blocs de comentaris que genereu han de ser amb l'estructura que heu anat fent a Programació
 
-## ACLARIMENTS SOBRE EL CODI:
+## Aclariments sobre el codi
 
 ###### @override:
 La sobreescriptura de mètodes, en la programació orientada a objectes, és una característica del llenguatge de programació que permet a una subclasse proporcionar una implementació específica d’un mètode que ja ha estat proporcionat per una de les seves superclasses o classes pare
