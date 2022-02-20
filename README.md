@@ -25,7 +25,9 @@ La sobreescriptura de mètodes, en la programació orientada a objectes, és una
 
 ###### Setters & Getters:
 són mètodes d'accés, cosa que indica que són sempre declarats públics, i ens serveixen per a dues coses:
+
 Setters: De l'Anglès Set, que significa establir, ja que ens serveix per assignar un valor inicial a un atribut, però de forma explícita, a més el Setter mai no retorna res (Sempre és void), i només ens permet donar accés públic a certs atributs que desitgem que l'usuari pugui modificar.
+
 Getters: De l'Anglès Get, que significa obtenir, ja que ens serveix per obtenir (recuperar o accedir) el valor ja assignat a un atribut i utilitzar-lo per a cert mètode
 
 ###### this:
