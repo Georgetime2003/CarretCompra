@@ -1,5 +1,7 @@
 # Carret de la compra
-- creareu un nou readme amb els vostres comentaris
+- S'ha de clonar aquest repositori al vostre compte
+- S'ha de crear un nou readme amb els vostres comentaris
+- S'ha de fer exclusió d'aquells fitxers no necessaris
 
 ## Sobre la refactorització
 
@@ -8,7 +10,7 @@
 _REFACT: quin mètode s'ha fet servir? sobre quina part del codi?_
 
 
-## Sobre la documentació amb JavaDoc
+## Sobre la documentació amb JavaDoc (4/10)
 
 a la capçalera de totes les classes cal posar almenys aquests valors:
 - Nom de l'autor
