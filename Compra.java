@@ -7,7 +7,12 @@ import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 
-
+/**
+ * Classe Main on s'executa la base del programa
+ * @author Jordi Palomino Escarrà
+ * @version 2.0
+ * @since 21-02-2022
+ */
 public class Compra {
 	public static final String NOM_SUPERMERCAT = "SAPAMERCAT";
 	private static Scanner sc = new Scanner(System.in); 
@@ -16,12 +21,18 @@ public class Compra {
 	private List<Electronica> llista_elec;
 	private List<Textil> llista_textil;
 
+	/**
+	 * Funció per reinicialitzar les Arrays del programa
+	 */
 	public Compra() {
 		llista_ali = new ArrayList<Alimentacio>();
 		llista_elec = new ArrayList<Electronica>();
 		llista_textil = new ArrayList<Textil>();
 	}
 
+	/**
+	 * Funció main del programa
+	 */
 	public static void main(String... args) {
 		int op,opP;
 		Compra compra = new Compra();
@@ -63,6 +74,10 @@ public class Compra {
 
 	}
 
+	/**
+	 * Funció per mostrar el menú Principal i també demanar a l'usuari quina opció vol escollir
+	 * @return op en format int
+	 */
 	public int menuPrincipal() {
 		int op;
 		System.out.println("------------");
@@ -77,6 +92,10 @@ public class Compra {
 		return op;
 	}
 
+	/**
+	 * Funció per mostrar el menú del producte i també demanar a l'usuari quina opció vol escollir
+	 * @return op en format int
+	 */
 	public int menuProducte() {
 		int op;
 		System.out.println("---------------");
@@ -90,8 +109,10 @@ public class Compra {
 		op = Integer.parseInt(sc.nextLine());
 		return op;
 	}
-	
-	
+
+	/**
+	 * Funció per demanar d'un producte de tipus aliment
+	 */
 	public void addAliment() {
 		String nom, codi;
 		float preu;
@@ -108,7 +129,10 @@ public class Compra {
 		LocalDate ld = readDate();
 		llista_ali.add(new Alimentacio(preu,nom,codi,ld));
 	}
-	
+
+	/**
+	 * Funció per demanar d'un producte de tipus Tèxtil
+	 */
 	public void addTextil() {
 		String nom, compo, codi;
 		float preu;
@@ -124,7 +148,10 @@ public class Compra {
 		
 		llista_textil.add(new Textil(preu,nom,codi,compo));	
 	}
-	
+
+	/**
+	 * Funció per demanar d'un producte de tipus Electrònica
+	 */
 	public void addElectronica() {
 		String nom,codi;
 		float preu;
@@ -141,7 +168,10 @@ public class Compra {
 		
 		llista_elec.add(new Electronica(preu,nom,codi,garantia));	
 	}
-	
+
+	/**
+	 * Funció per mostrar la llista de la compra amb els elements afegits sense pagar encara
+	 */
 	//Llistar les tres llistes
 	public void printCarret() {
 		Map<String,Integer> llista = new HashMap<>();
@@ -175,7 +205,10 @@ public class Compra {
 		}*/
 
 	}
-	
+
+	/**
+	 * Funció que passa per caixa tots els elements i mostra el preu final del producte
+	 */
 	public void passarCaixa() {
 		double total = 0;
 		Set<Alimentacio> ali_uniq = new HashSet<Alimentacio>(llista_ali);
@@ -216,6 +249,10 @@ public class Compra {
 		llista_textil.clear();
 	}
 
+	/**
+	 * Funció per comprovar si la data està ben escrita i sinó tornar a demanar la data correctament
+	 * @return d en format LocalDate
+	 */
 	private LocalDate readDate() {
 		LocalDate d = null;
 		boolean dateOK = false;
@@ -233,6 +270,11 @@ public class Compra {
 		return d;
 	}
 
+	/**
+	 * Funció per agafar les dades del producte i redirigir-se a cada classe corresponent segons el seu tipus
+	 * @param codib el codi de barres del producte
+	 * @return la llista en format String
+	 */
 	private String getNomProducte(String codib) {
 		//Mirem a les tres llistes
 		List<Producte> list = llista_ali.stream().filter(o -> o.getCodibarres().equals(codib)).distinct().collect(Collectors.toList());
