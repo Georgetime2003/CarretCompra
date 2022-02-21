@@ -8,6 +8,10 @@
 - haureu de deixar clar en quina classe i/o mètode apliqueu refactorització, per tant per a tota la refactoritzacio cal posar un comentari com ara aquest:
 
 _REFACT: quin mètode s'ha fet servir? sobre quina part del codi?_
+    A la Funció equals he realitzat un inline code reduint el if else sense afectar el codi del matei(Producte Linia 81)
+    A la funció printCarret he fet una extracció de mètode per cada cerca de busca codi de barres(Compra, Línia 176)
+    A la funció printCarret he fet una extracció de mètode per netegar el map(Compra, Línia 176)
+    
 
 
 ## Sobre la documentació amb JavaDoc (4/10)

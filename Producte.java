@@ -79,22 +79,16 @@ public abstract class Producte {
 	@Override
 	public boolean equals(Object obj) {
 		boolean son_iguals;
-		if(obj == null) {
-			son_iguals = false;
+		Producte p = (Producte) obj;
+		if(!(obj == null) || (codibarres.equals(p.getCodibarres()) && getPreu() == p.getPreu())) {
+			son_iguals = true;
 			return son_iguals;
 		}
 		else {
-			Producte p = (Producte) obj;
-			if (codibarres.equals(p.getCodibarres()) && getPreu() == p.getPreu()) {
-				son_iguals = true;
-				return son_iguals;
-			}
-			else {
 				son_iguals = false;
 				return son_iguals;
 			}
 		}
-	}
 
 	/**
 	 * Funció per transformar el codi en hash

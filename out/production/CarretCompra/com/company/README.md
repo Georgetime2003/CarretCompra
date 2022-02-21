@@ -8,6 +8,9 @@
 - haureu de deixar clar en quina classe i/o mètode apliqueu refactorització, per tant per a tota la refactoritzacio cal posar un comentari com ara aquest:
 
 _REFACT: quin mètode s'ha fet servir? sobre quina part del codi?_
+    A la Funció equals he realitzat un inline code reduint el if else sense afectar el codi del matei(Producte Linia 81)
+    
+    
 
 
 ## Sobre la documentació amb JavaDoc (4/10)

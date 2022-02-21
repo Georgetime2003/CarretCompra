@@ -178,24 +178,19 @@ public class Compra {
 
 		//busquem els productes d'alimentació amb el mateix codi de barres
 		for(Alimentacio a : llista_ali) {
-			if(!llista.containsKey(a.getCodibarres())) 	llista.put(a.getCodibarres(),1);
-			else llista.put(a.getCodibarres(),llista.get(a.getCodibarres()) + 1);
+			buscarAli(llista, a);
 		}
-		llista.forEach((k,v)-> System.out.println(getNomProducte(k) + " -> " + (Integer) v));
-		llista.clear(); //netejar map perquè es fa servir en la següent cerca
-
+		 //netejar map perquè es fa servir en la següent cerca
+		netejarmap(llista);
 		//busquem els productes tèxtils amb el mateix codi de barres
 		for(Textil a : llista_textil) {
-			if(!llista.containsKey(a.getCodibarres())) llista.put(a.getCodibarres(),1);
-			else llista.put(a.getCodibarres(),llista.get(a.getCodibarres()) + 1);
+			buscarTextil(llista, a);
 		}
-		llista.forEach((k,v)-> System.out.println(getNomProducte(k) + " -> " + (Integer) v));
-		llista.clear(); //netejar map perquè es fa servir en la següent cerca
+		netejarmap(llista); //netejar map perquè es fa servir en la següent cerca
 
 		//busquem els productes d'electrònica amb el mateix codi de barres
 		for(Electronica a : llista_elec) {
-			if(!llista.containsKey(a.getCodibarres())) llista.put(a.getCodibarres(),1);
-			else llista.put(a.getCodibarres(),llista.get(a.getCodibarres()) + 1);
+			buscarElectronica(llista, a);
 		}
 		llista.forEach((k,v)-> System.out.println(getNomProducte(k) + " -> " + (Integer) v));
 
@@ -204,6 +199,39 @@ public class Compra {
 			System.out.println(getNomProducte((String) entry.getKey()) + "-" + entry.getValue());
 		}*/
 
+	}
+	public void netejarmap(Map<String,Integer> llista){
+		llista.forEach((k,v)-> System.out.println(getNomProducte(k) + " -> " + (Integer) v));
+		llista.clear();
+	}
+	/**
+	 * Funció que busca els productes d'alimentació amb el mateix codi de barres
+	 * @param llista llista de la compra
+	 * @param a element d'objecte Alimentació
+	 */
+	public void buscarAli(Map<String,Integer> llista, Alimentacio a){
+		if(!llista.containsKey(a.getCodibarres())) 	llista.put(a.getCodibarres(),1);
+		else llista.put(a.getCodibarres(),llista.get(a.getCodibarres()) + 1);
+	}
+
+	/**
+	 * Funció que busca els productes tèxtils amb el mateix codi de barres
+	 * @param llista llista de la compra
+	 * @param a element d'objecte Alimentació
+	 */
+	public void buscarTextil(Map<String,Integer> llista, Textil a){
+		if(!llista.containsKey(a.getCodibarres())) 	llista.put(a.getCodibarres(),1);
+		else llista.put(a.getCodibarres(),llista.get(a.getCodibarres()) + 1);
+	}
+
+	/**
+	 * Funció que busca els productes electrònics amb el mateix codi de barres
+	 * @param llista llista de la compra
+	 * @param a element d'objecte Alimentació
+	 */
+	public void buscarElectronica(Map<String,Integer> llista, Electronica a){
+		if(!llista.containsKey(a.getCodibarres())) 	llista.put(a.getCodibarres(),1);
+		else llista.put(a.getCodibarres(),llista.get(a.getCodibarres()) + 1);
 	}
 
 	/**
